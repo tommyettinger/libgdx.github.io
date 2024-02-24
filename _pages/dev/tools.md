@@ -13,7 +13,7 @@ excerpt: "There are different tools – both official and community-made – tha
 feature_row:
   - image_path: /assets/images/dev/tools/spine.jpg
     title: "Spine"
-    excerpt: 'An animation tool that focuses specifically on 2D game animations'
+    excerpt: 'An animation tool that focuses on 2D game animations'
     url: "http://en.esotericsoftware.com/"
     btn_label: "Documentation & Download"
     btn_class: "btn--primary"
@@ -31,41 +31,41 @@ feature_row:
     btn_class: "btn--primary"
 
 feature_row2:
-  - image_path: /assets/images/dev/tools/setup_tool_old.jpg
-    title: "Setup Tool"
+  - image_path: /assets/images/dev/tools/setup_tool.jpg
+    title: "gdx-setup"
     excerpt: 'A simple wizard tool for libGDX projects'
-    url: "/assets/downloads/legacy_setup/gdx-setup_latest.jar"
+    url: "/wiki/start/project-generation"
     btn_label: "Download"
     btn_class: "btn--primary"
   - image_path: /assets/images/dev/tools/skin_composer.png
     title: "Skin Composer"
-    excerpt: 'A skin creator for libGDX'
+    excerpt: "A skin creator for libGDX's scene2d.ui"
     url: "https://github.com/raeleus/skin-composer/wiki"
     btn_label: "Documentation & Download"
     btn_class: "btn--primary"
   - image_path: /assets/images/dev/tools/particle_editor.png
     title: "Particle Editor"
     excerpt: 'A powerful tool for making 2D particle effects'
-    url: "https://github.com/libgdx/libgdx/wiki/2D-Particle-Editor"
+    url: "/wiki/tools/2d-particle-editor"
     btn_label: "Documentation & Download"
     btn_class: "btn--primary"
 
 feature_row3:
   - image_path: /assets/images/dev/tools/flame.gif
     title: "Flame"
-    excerpt: 'A powerful 3D particle editor'
-    url: "https://github.com/libgdx/libgdx/wiki/3D-Particle-Effects"
+    excerpt: 'A powerful 3D particle editor for libGDX'
+    url: "/wiki/graphics/3d/3d-particle-effects"
     btn_label: "Documentation & Download"
     btn_class: "btn--primary"
   - image_path: /assets/images/dev/tools/hiero.png
     title: "Hiero"
-    excerpt: 'A bitmap font packing tool'
-    url: "https://github.com/libgdx/libgdx/wiki/Hiero"
+    excerpt: 'A bitmap font packing tool compatible with libGDX'
+    url: "/wiki/tools/hiero"
     btn_label: "Documentation & Download"
     btn_class: "btn--primary"
   - image_path: /assets/images/dev/tools/fbx_conv.gif
     title: "fbx-conv"
-    excerpt: 'A command line for converting FBX/Collada/Obj to libGDX friendly formats'
+    excerpt: 'A tool for converting 3D models to libGDX-friendly formats'
     url: "https://github.com/libgdx/fbx-conv"
     btn_label: "Documentation & Download"
     btn_class: "btn--primary"
@@ -80,7 +80,7 @@ feature_row4:
   - image_path: /assets/images/dev/tools/texture_packer.jpeg
     title: "Texture Packer"
     excerpt: 'A tool for packing images into atlases'
-    url: "https://github.com/libgdx/libgdx/wiki/Texture-packer"
+    url: "/wiki/tools/texture-packer"
     btn_label: "Documentation & Download"
     btn_class: "btn--primary"
 

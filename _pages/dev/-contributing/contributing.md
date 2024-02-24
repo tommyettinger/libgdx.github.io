@@ -14,7 +14,7 @@ sidebar:
 
 {% include breadcrumbs.html %}
 
-Contributing to libGDX can come in a few different forms: you can [report issues](/dev/issues/), help out on the [Discord](/community/) and IRC, pledge to the [Patreon](/funding/) page, and submit [code](https://github.com/libgdx/libgdx/) and [documentation](https://github.com/libgdx/libgdx/wiki) back to the project on GitHub.
+Contributing to libGDX can come in a few different forms: you can [report issues](/dev/issues/), help out on the [Discord](/community/), pledge to the [Patreon](/funding/) page, and submit [code](https://github.com/libgdx/libgdx/) and [documentation](/wiki/) back to the project on GitHub. Check out the [CONTRIBUTING.md](https://github.com/libgdx/libgdx/blob/master/.github/CONTRIBUTING.md) file on GitHub to find out more!
 
 If you want to submit code back to the project, please take a moment to review our guidelines below.
 
@@ -22,7 +22,7 @@ If you want to submit code back to the project, please take a moment to review o
 ## API Changes & Additions
 If you modify a public API, or add a new one, make sure to add these changes to the [CHANGES](https://github.com/libgdx/libgdx/blob/master/CHANGES) file in the root of the repository.
 
-If you want to poll the brains of other devs, either open an issue on our issue tracker, send a pull request and start a conversation on Github, or join our official [Discord server](/community/discord/).
+If you want to pick the brains of other devs, either open an issue on our issue tracker, send a pull request and start a conversation on Github, or join our official [Discord server](/community/discord/).
 
 ## Contributor License Agreement
 libGDX is licensed under the [Apache 2.0 license](http://en.wikipedia.org/wiki/Apache_License). Before we can accept (major) code contributions, we need you to sign our [Contributor License Agreement](https://github.com/libgdx/libgdx/blob/master/CLA.txt). Just print it out, fill in the blanks and send a copy to contact@badlogicgames.com, with the subject `[libGDX] CLA`.
@@ -31,10 +31,9 @@ Signing the CLA will allow us to use and distribute your code. This is a non-exc
 {: .notice--info}
 
 ## Formatting
-If you are working on any of the libGDX code, we require you to use the formatter that we use. You can find it [here](https://github.com/libgdx/libgdx/blob/master/eclipse-formatter.xml). Failure to use the formatter will most likely get your pull request rejected. The formatter provided can be imported into Intellij and Android Studio also, its not just for Eclipse. See [here](https://blog.jetbrains.com/idea/2014/01/intellij-idea-13-importing-code-formatter-settings-from-eclipse/) for official documentation on this.
+If you are working on any of the libGDX code, we require you to use our formatter. To make our life easier, we have integrated the formatter into our build system with  [Spotless](https://github.com/diffplug/spotless). This allows you to run `./gradlew spotlessApply` to format your files locally and also ensures that pull requests are formatted automatically via GitHub Actions.
 
-Don't let the formatter run automatically, or on the whole file you are changing. Only run the formatter on the lines you are specifically changing.
-{: .notice--info}
+Alternatively, you can find the Eclipse formatter file [here](https://github.com/libgdx/libgdx/blob/master/eclipse-formatter.xml), which can also be imported into IntelliJ IDEA and Android Studio. See [here](https://blog.jetbrains.com/idea/2014/01/intellij-idea-13-importing-code-formatter-settings-from-eclipse/) for official documentation on how to do this.
 
 ## Code Style
 libGDX doesn't have an official coding standard, but we stand by the usual Java style, as should you.
@@ -43,7 +42,7 @@ libGDX doesn't have an official coding standard, but we stand by the usual Java 
 <b>Please do <u>not</u> do any of the following:</b>
 <ul>
   <li>Underscores in identifiers</li>
-  <li><a href="http://en.wikipedia.org/wiki/Hungarian_notation">Hungarian notation</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Hungarian_notation">Hungarian notation</a></li>
   <li>Prefixes for fields or arguments</li>
   <li>Curly braces on new lines</li>
 </ul>
@@ -67,18 +66,18 @@ If some java features are not supported on GWT they must either be emulated or a
 <ul>
   <li>Formatting: String.format() is not supported.</li>
   <li>Regular expressions. However, a basic emulation of <a href="https://github.com/libgdx/libgdx/blob/master/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/emu/java/util/regex/Pattern.java">Pattern</a> <a href="https://github.com/libgdx/libgdx/blob/master/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/emu/java/util/regex/Matcher.java">Matcher</a> is provided.</li>
-  <li>Reflection. Use <a href="https://github.com/libgdx/libgdx/wiki/Reflection">libGDX reflection</a> instead.</li>
+  <li>Reflection. Use <a href="/wiki/utils/reflection">libGDX reflection</a> instead.</li>
   <li>Multithreading: <a href="https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/utils/Timer.java">Timers</a> are supported on GWT, but threads are strictly not.</li>
 </ul>
 </div>
 
-Determine if any new classes are compatible with GWT, and either **include** or **exclude** elements to the [GWT module](https://github.com/libgdx/libgdx/blob/master/gdx/res/com/badlogic/gdx.gwt.xml). See for example [this PR](https://github.com/libgdx/libgdx/pull/5018/files#diff-13b547f0d1b0872d60d67db4ca0b266d).
+For each new file added to LibGDX, you need to determine whether it is compatible with GWT, and either **include** or **exclude** it in the [GWT module](https://github.com/libgdx/libgdx/blob/master/gdx/res/com/badlogic/gdx.gwt.xml). To include a class file, add a new entry to the `gdx/src/com/badlogic/gdx.gwt.xml` file. See for example [this PR](https://github.com/libgdx/libgdx/pull/5018/files#diff-13b547f0d1b0872d60d67db4ca0b266d).
 If the new file isn't added to `gdx/src/com/badlogic/gdx.gwt.xml`, an error similar to
 
 ```
-[ERROR] Errors in 'jar:file:<...>'
-[ERROR] Line <line num>: No source code is available for type com.badlogic.gdx.graphics.g3d.environment.PointShadowLight; did you forget to inherit a required module?
-[ERROR] Aborting compile due to errors in some input files
+    [ERROR] Errors in 'jar:file:<...>'
+          [ERROR] Line <line num>: No source code is available for type com.badlogic.gdx.graphics.g3d.environment.PointShadowLight; did you forget to inherit a required module?
+    [ERROR] Aborting compile due to errors in some input files
 ```
 
 may be seen.
@@ -106,20 +105,9 @@ To reduce the chances of introducing errant behavior and to increase the chance 
 
 <br/>
 
-# How to contribute code
-libGDX uses git, with our codebase situated on GitHub. In order to submit changes back to the official libGDX project, you will need to fork the project, clone your fork, [work on its source](/dev/from-source/), push changes back to your fork, and then submit a pull request based on your changes.
+# Other development resources
+There are a few wiki articles concerned with contributing to libGDX:
 
-Pull requests will then be checked by automation tools as well as the core contributors before merging. Please do not leave it up to the core contributors to test your code, make sure it compiles, and test on every platform you can. State in your pull request what you have tested on.
-
-To sum it up, this is the general workflow:
-- [Fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) the libGDX repository on GitHub.
-- Clone the forked repository either via the command line or your IDE.
-- Add the libGDX repository as a remote (to sync latest changes).
-- Make your changes to your locally cloned (of your fork), repository, ideally on a new branch. See [here](/dev/from-source/) for a guide on how to get the libGDX code running locally.
-- Commit your changes, and push the changes back to your forked repository on GitHub.
-- Go to GitHub, view your forked repository, select your branch and create a pull request.
-- Write a detailed description of what your pull request does, how it has been tested, what platforms it has been tested on, and why it belongs in libGDX.
-
-For a very extensive explanation of how the pull request system on GitHub is supposed to work, check out [this guide](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project#Forked-Public-Project).
-
-Pull requests may be denied for not being ready, or not fitting the scope of the project. Please do not take any offense to having a pull request rejected. We appreciate every contribution, but some code submissions are just not a good fit for the project.
+- [Adding new keycodes](/wiki/misc/adding-new-keycodes)
+- [Building the bullet wrapper](/wiki/misc/building-the-bullet-wrapper)
+- [Release process](/wiki/misc/release-process)

@@ -47,7 +47,7 @@ third-party extensions to get a recent version of `colorful`.
 Your first choice is, "What color space should I use?" To answer this, you need to know what a color space is. You
 already know at least one, RGBA -- Color in libGDX uses it, as does almost everything on a computer screen. The other
 options are less widely-known, and some are mostly in colorful-gdx for historical reasons. Generally, the choice is
-between `rgb` and `oklab`. 
+between `rgb` and `oklab`.
 
 With RGB, you have 3 channels, red/green/blue, plus alpha, and you can make a color lighter by raising the RGB channels
 or darker by lowering those channels. You can easily make a color more red by raising the red channel, and the same with
@@ -176,11 +176,11 @@ SimplePalette has simpler names, as one might expect, all of them one word. You 
  - [Palette, by hue, RGB](https://tommyettinger.github.io/colorful-gdx/ColorTableHueRGB.html)
  - [Palette, by lightness, RGB](https://tommyettinger.github.io/colorful-gdx/ColorTableValueRGB.html)
  - [SimplePalette, by name, Oklab](https://tommyettinger.github.io/colorful-gdx/ColorTableSimpleOklab.html)
- - [SimplePalette, by hue, Oklab](https://tommyettinger.github.io/colorful-gdx/ColorTableSimpleHueOklab.html)
- - [SimplePalette, by lightness, Oklab](https://tommyettinger.github.io/colorful-gdx/ColorTableSimpleValueOklab.html)
+ - [SimplePalette, by hue, Oklab](https://tommyettinger.github.io/colorful-gdx/ColorTableHueSimpleOklab.html)
+ - [SimplePalette, by lightness, Oklab](https://tommyettinger.github.io/colorful-gdx/ColorTableValueSimpleOklab.html)
  - [SimplePalette, by name, RGB](https://tommyettinger.github.io/colorful-gdx/ColorTableSimpleRGB.html)
- - [SimplePalette, by hue, RGB](https://tommyettinger.github.io/colorful-gdx/ColorTableSimpleHueRGB.html)
- - [SimplePalette, by lightness, RGB](https://tommyettinger.github.io/colorful-gdx/ColorTableSimpleValueRGB.html)
+ - [SimplePalette, by hue, RGB](https://tommyettinger.github.io/colorful-gdx/ColorTableHueSimpleRGB.html)
+ - [SimplePalette, by lightness, RGB](https://tommyettinger.github.io/colorful-gdx/ColorTableValueSimpleRGB.html)
 
 The Oklab pages show the `L`, `A`, and `B` channel values for each color, while the RGB pages already have their
 channels displayed in the RGBA8888 `hex code` column, and don't repeat that info. Both show `Hue` and `Saturation` as
@@ -264,7 +264,7 @@ simple to adjust with just one channel (L), colorful-ness is simple to adjust by
 channels. Adjusting L isn't centered like A and B are; if you increase L on the tweak, it will make lightness range
 higher but no lower, and if you decrease it, the lightest colors become unavailable. The color can be useful with any
 kind of reduced range, moving L so a range like 0.0 through 0.4 is raised up to 0.3 to 0.7. That's possible with an L
-tweak value of 0.93, because 0.93 is higher than the neutral value for Oklab's lightness (0.63) by 0.3. 
+tweak value of 0.93, because 0.93 is higher than the neutral value for Oklab's lightness (0.63) by 0.3.
 
 Before, I gave an example that desaturates colors and increases contrast. How about some other options?
 
@@ -321,7 +321,7 @@ have a way to set the degree of bias toward one color or another, it can mix mor
 Using `lerpFloatColors()` with changing values for its last parameter (`change`) leads to smooth blends, which can be
 used for gradients or changes over time. That's what Beatrix used for this slick effect:
 
-![Pretty Triangle!](https://i.imgur.com/ojBUypw.gif)
+![Pretty triangle!](/assets/images/posts/2021-06-05/pretty-triangle.gif)
 
 ## Future Directions
 
