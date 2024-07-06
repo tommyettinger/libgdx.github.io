@@ -19,17 +19,6 @@ toc_sticky: false
 # Upcoming
 If you want to stay up to date – join the official [libGDX Discord](/community/discord/)!
 
-## March 2024
-Jam Suggestions: 10th – 12th  
-Jam Voting: 14th – 16th  
-Jam: 17th – 23rd
-
-## June 2024
-Special Space Jam  
-No suggestions or voting  
-Theme announced before the Jam starts  
-Jam: 16th – 22nd
-
 ## September 2024
 Suggestions: 8th - 10th  
 Voting: 12th - 14th  
@@ -54,6 +43,8 @@ We encourage camaraderie, teamwork, and good sportsmanship with a side of well-i
 <br/>
 
 # Past Jams
+* [TIME TRAVEL](https://itch.io/jam/libgdx-jam-29) (June 2024)
+* [THE UNDERWORLD](https://itch.io/jam/libgdx-jam-28) (March 2024)
 * [It Came From Above](https://itch.io/jam/libgdx-jam-27) (December 2023)
 * [A Terrifying (K)Night!](https://itch.io/jam/libgdx-jam-26) (September 2023)
 * [UNDERWATER](https://itch.io/jam/libgdx-jam-25) (June 2023)
